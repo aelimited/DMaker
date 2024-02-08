@@ -25,6 +25,7 @@ public class DMakerController {
         log.info("GET /developers HTTP/1.1");
         return dMakerService.getAllDevelopers();
     }
+
     @GetMapping("/developer/{memberId}")
     public DeveloperDetailDto getDeveloperDetail(
             @PathVariable String memberId
@@ -40,5 +41,4 @@ public class DMakerController {
         log.info("request : {}",request);
         return dMakerService.createDeveloper(request);
     }
-
 }
