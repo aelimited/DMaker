@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
   "developerLevel": "SENIOR",
-  "developerSkillType": "BACK_END",
+  "developerSkillType": "FRONT_END",
   "experienceYears": 12,
   "memberId": "Mini",
   "name": "jung",
