@@ -13,7 +13,6 @@ import lombok.*;
 @Builder
 public class DeveloperDetailDto {
 
-
     private DeveloperLevel developerLevel;
     private DeveloperSkillType developerSkillType;
     private Integer experienceYears;
