@@ -4,14 +4,12 @@ import com.fastcampus.programming.dmaker.dto.CreateDeveloper;
 import com.fastcampus.programming.dmaker.dto.DeveloperDetailDto;
 import com.fastcampus.programming.dmaker.dto.DeveloperDto;
 import com.fastcampus.programming.dmaker.dto.EditDeveloper;
-import com.fastcampus.programming.dmaker.entity.Developer;
 import com.fastcampus.programming.dmaker.service.DMakerService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
@@ -24,7 +22,7 @@ public class DMakerController {
     @GetMapping("/developers")
     public List<DeveloperDto> getAllDevelopers() {
         log.info("GET /developers HTTP/1.1");
-        return dMakerService.getAllDevelopers();
+        return dMakerService.getAllEmployDevelopers();
     }
 
     @GetMapping("/developer/{memberId}")
@@ -50,4 +48,12 @@ public class DMakerController {
         log.info("PUT /developers HTTP/1.1");
         return dMakerService.editDeveloper(memberId, request);
     }
+    @DeleteMapping("/developer/{memberId}")
+    public DeveloperDetailDto deleteDeveloper(
+            @PathVariable String memberId
+    ) {
+        return dMakerService.deleteDeveloper(memberId);
+    }
+
+
 }
